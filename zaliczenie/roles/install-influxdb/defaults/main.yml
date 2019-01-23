@@ -1,0 +1,3 @@
+---
+    metric_store_ip: 127.0.0.1
+    rpm_influxdb: https://dl.influxdata.com/influxdb/releases/influxdb-1.5.2.x86_64.rpm

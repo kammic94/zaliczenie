@@ -1,0 +1,16 @@
+---
+    - name: enable epel repository
+      yum:
+        name: "{{epel_url}}"
+    - name: enable epel repository
+      shell: yum-config-manager --enable epel
+    - name: enable epel repository
+      shell: yum repolist
+    - name: install nginx
+      yum:
+        name: nginx
+    - name: start nginx service
+      service:
+        name: nginx
+        state: started
+        

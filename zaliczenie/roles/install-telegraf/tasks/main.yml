@@ -1,0 +1,17 @@
+---
+    - name: "install telegraf"
+      yum:
+        name: "{{telegraf_url}}"
+        state: present
+    - name: "chmod"
+      file:
+        path: /etc/telegraf/telegraf.conf
+        mode: 0644
+    - name: "copy cfg into dest"
+      template:
+        src: telegraf.conf
+        dest: /etc/telegraf/telegraf.conf
+    - name: "start telegraf"
+      service:
+        name: "telegraf"
+        state: restarted

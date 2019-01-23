@@ -1,0 +1,6 @@
+---
+    metrics_database_name: "metrics"
+    metrics_database_password: "metrics"
+    metrics_database_user: "metrics"
+    datasource_name: "my-influx"
+    grafana_http_port: 8080

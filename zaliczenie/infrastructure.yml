@@ -1,0 +1,23 @@
+---
+    - hosts: app_nodes
+      become: yes
+      roles:
+        - install-telegraf
+        - config-app
+        
+    - hosts: stats_nodes
+      become: yes
+      roles:      
+        - install-telegraf
+        - install-influxdb
+        - install-grafana
+        - create-datasource
+        - create-dashboard
+        
+    - hosts: nginx-proxy_nodes
+      become: yes
+      roles:
+        - install-telegraf
+        - install-nginx
+        - config-nginx
+        - config-ssl 

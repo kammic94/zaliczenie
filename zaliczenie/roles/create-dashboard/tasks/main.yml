@@ -1,0 +1,18 @@
+---
+    - copy:
+        src: templates/my.json
+        dest: /tmp/my.json
+    - copy:
+        src: templates/apache.json
+        dest: /tmp/apache.json
+    - name: Import Grafana dashboard foo
+      grafana_dashboard:
+        grafana_url: "https://127.0.0.1:8080"
+        grafana_user: "admin"
+        grafana_password: "admin"
+        state: present
+        slug: apache
+        message: Updated by ansible
+        overwrite: yes
+        path: /tmp/apache.json
+      ignore_errors: yes

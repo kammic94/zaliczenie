@@ -1,0 +1,8 @@
+---
+    - name: install python
+      yum:
+         name: python2-certbot-nginx
+    - name: ssl 1st domain
+      shell: sudo certbot -i nginx -d "adskaplikacja.tk" --nginx -m "kamil.michalik.94@gmail.com" --agree-tos --redirect
+    - name: ssl 2nd domain
+      shell: sudo certbot -i nginx -d "adskgrafana.tk" --nginx -m "kamil.michalik.94@gmail.com" --agree-tos --redirect
