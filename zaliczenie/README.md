@@ -13,12 +13,9 @@
 10. Wejdz do roles/config-ssl/tasks/main.yml 
 11. Zmień nazwy domen i wpisz swój adres e-mail.
 
-12. Wejdz do roles/install-telegraf/defaults
-13. Zmień zmienną  telegraf_influx_url, tak aby wskazywała na publiczny adres z stats_nodes, na porcie 8086
-
-14. Wpisz do konsoli:
+12. Wpisz do konsoli:
     eval `ssh-agent`
     ssh-add id.student
     student1
     ansible-playbook -i hosts.ini infrastructure.yml
-15. \o/
+13. \o/
